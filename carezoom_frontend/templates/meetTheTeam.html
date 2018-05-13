@@ -1,0 +1,160 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+{% block main %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<h2 style="text-align:center">Our Team</h2><br>
+<ul class="flex-container">
+  <div class="card">
+  <img src="/w3images/team2.jpg" alt="Lisa" style="width:100%">
+  <h3>Lisa Rotenstein, MD MBA</h3>
+  <p class="title">Co-founder</p>
+  <p>Brigham Internal Medicine Resident</p> <p>Harvard Medical School and Harvard Business School graduate</p>
+<p>MedTech Boston's 40 under 40 in Healthcare; World Economic Forum Global Shaper</p>
+<p>Previous Director of IT and Editor-in-Chief at Close Concerns</p>
+<p>Healthcare innovation at BWH, DFCI, HMS Center for Primary Care</p>
+<p>Published in JAMA, Lancet, NEJM</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+
+<div class="card">
+  <img src="/w3images/team2.jpg" alt="Ashley" style="width:100%">
+  <h3>Ashley Shaw, BA</h3>
+  <p class="title">Co-founder</p>
+  <p>MD/MBA Candidate at Harvard Medical School and Harvard Business School
+
+Columbia graduate
+
+Project coordinator for Quality of Life/Administration @ ArchCare
+
+Co-leader, Student Leadership Committee at HMS Center for Primary Care
+
+Medicaid ACO Researcher @ Mass General Hospital</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+</ul>
+<br>
+<ul class="flex-container">
+  <div class="card">
+  <img src="/w3images/team2.jpg" alt="Lisa" style="width:100%">
+  <h3>Christina Bear</h3>
+  <p class="title">Technical Lead</p>
+  <p>BS Candidate in Computer Science at Harvard College</p> <p>CS50 Teaching Fellow</p>
+<p>Cofounder, BubbleBox: Mobile Hygiene for Migrants and Refugees</p>
+<p>Crimson Technology Board and Harvard CS Researcher</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+
+</ul>
+<br>
+<ul class="flex-container">
+  <div class="card">
+  <img src="/w3images/team2.jpg" alt="Lisa" style="width:100%">
+  <h3>Festus Ojo</h3>
+  <p class="title">Student Editor</p>
+  <p>Nigerian native by way of Atlanta, Georgia, Festus Ojo is a current freshman at Harvard College. He is planning on concentrating in chemistry but having a secondary in computer science. He aspires to use the worlds of business, technology, and medicine to impact those in need and make a difference in the world around them. He is passionate about the world of medicine and its wide range of applications to help others in need.</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="https://www.linkedin.com/in/festuso/"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+<div class="card">
+  <img src="/w3images/team2.jpg" alt="Lisa" style="width:100%">
+  <h3>Selena Zhang</h3>
+  <p class="title">Student Editor</p>
+  <p>Selena is a student at Harvard College studying Biomedical Engineering. She aspires to create opportunities for and with others, and she hopes to one day serve people through health and medicine. As a student researcher, Selena joined CareZoom because she is passionate about using science to drive improvements in care. Originally from California, Selena spends most of her free time here in Boston as a frozen but very happy popsicle.</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="https://www.linkedin.com/in/selena-zhang-3463a8ba/"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+
+<div class="card">
+  <img src="/w3images/team2.jpg" alt="Lisa" style="width:100%">
+  <h3>Meg Krasne, BA</h3>
+  <p class="title">Graduate Student Editor</p>
+  <p>MD/MPH Candidate at Harvard Medical School and Harvard T.H. Chan School of Public Health</p><p>Graduated from University of Pennsylvania</p><p>Harvard Kennedy School Center for Public Leadership Zuckerman Fellow 2017-2018</p><p>Health systems researcher with the BetterBirth team at Ariadne Labs</p><p>Clinical researcher with the Young Women’s Cohort at the Dana Farber Cancer Institute</p>
+  <div style="margin: 24px 0;">
+    <a href="#"><i class="fa fa-dribbble"></i></a> 
+    <a href="#"><i class="fa fa-twitter"></i></a>  
+    <a href="#"><i class="fa fa-linkedin"></i></a>  
+    <a href="#"><i class="fa fa-facebook"></i></a> 
+ </div>
+ <p><button>Contact</button></p>
+</div>
+</ul>
+
+</body>
+</html>
+{% endblock %}

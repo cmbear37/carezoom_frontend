@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+{% block main %}
+
+ <h2>Choose one of the options to get started:</h2>
+           
+
+           <center>
+
+            <a href="{{ url_for('add') }}" class="classname">Add my project</a>
+            <a href="{{ url_for('search') }}" class="classname">Search for a project</a>
+            <a href="{{ url_for('talk') }}" class="classname">Talk to an Expert</a>
+            </center>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Add
+{% endblock %}
+{% block main %}
+
+
+
+<div class="container">
+  <form style="width:100%">
+  	<center>
+    <ul class="flex-outer">
+      <li>
+        <label for="title" >Title of Intervention</label>
+        <input type="text" id="title" placeholder="Name of project, invervention, etc." style="color: #000066; font-family: 'arial', sans-serif;">
+      </li>
+      <li>
+        <label for="description">What was the intervention?</label>
+        <textarea rows="3" id="description" placeholder="Please describe the intervention" style="color: #000066; font-family: 'arial', sans-serif;"></textarea>
+      </li>
+      <li>
+        <label for="resources">What resources were used?</label>
+        <textarea rows="3" id="resources" placeholder="Surveys, patients' personal devices, etc." style="color: #000066; font-family: 'arial', sans-serif;"></textarea>
+      </li>
+      <li>
+        <label for="participants">Who participated in implementing the intervention, and in what way?</label>
+        <textarea rows="3" id="participants" placeholder="PA ran through questionnaire, MA collected patient data, etc." style="color: #000066; font-family: 'arial', sans-serif;"></textarea>
+      </li>
+      <li>
+        <label for="budget">What was the budget/cost of implementation?</label>
+        <input type="text" id="budget" placeholder="$10,000" style="color: #000066; font-family: 'arial', sans-serif;">
+      </li>
+      <li>
+        <label for="length">How long did it take to implement (in months)?</label>
+        <input type="text" id="length" placeholder="3" style="color: #000066; font-family: 'arial', sans-serif;">
+      </li>
+      <li>
+        <label for="results"> What are the results so far?</label>
+        <textarea rows="3" id="results" placeholder="Success with 30% of patient base after 3 months, reported increased efficiency in personnel task distribution, etc. " style="color: #000066; font-family: 'arial', sans-serif;"></textarea>
+      </li>
+      <left>
+      <li>
+        <button type="submit">Submit</button>
+      </li>
+  </left>
+    </ul>
+      </center>
+  </form>
+
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,348 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+
+<div style="padding: 35px;">
+
+   <form role="search" class="search-form" id="search-form" action="#" method="post">
+  
+  		<section class="search-terms">
+    		<label for="search-term" class="search-term-label screen-reader-text">Search</label>
+    		<div>
+		      <span class="search-term-wrap">
+		        <input type="search" id="search-term" class="search-term">
+		      </span>
+		      <span class="search-term-button-wrap">
+		        <input type="submit" value="Search" class="search-button">
+		      </span>
+		    </div>
+  		</section>
+
+  		<section class="search-filters" id="search-filters">
+    
+    		<h3 class="search-filters-title" id="search-filters-title">Intervention Budget</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">$0-500</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">$500-1000/label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$1K to 5K</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$5K to 10K</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$10K to 25K</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$25K to 50K</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$150K to 100K</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$100K to 500K</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$500K to 1M</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">$>1M</label>
+		      </div>
+		    </div>
+    	<h3 class="search-filters-title" id="search-filters-title">Type of Organization</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">Academic Hospital</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">Integrated healthcare system/network</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Community Hospital</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Community outpatient clinic</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Community health center</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Home-based care</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Subacute rehab</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Skilled nursing facility</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Urgent care</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Community organization</label>
+		      </div>
+		    </div>
+
+		    <h3 class="search-filters-title" id="search-filters-title">EMR or other Tech Used</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">Epic</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">Cerner</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">ECW</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Redcap</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Microsoft Office</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">iPads/Tablets</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Paper and pen</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Tonic</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Athena Health</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Desktops</label>
+		      </div>
+		    </div>
+
+		    <h3 class="search-filters-title" id="search-filters-title">Geographic Location</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">Suburb</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">Urban</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Rural</label>
+		      </div>
+		      
+		    </div>
+
+		    <h3 class="search-filters-title" id="search-filters-title">Demographics served</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">Immigrants</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">Rural</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Upper middle class/wealthy</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Working class</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Women</label>
+		      </div>
+		      
+		    </div>
+		    <h3 class="search-filters-title" id="search-filters-title">Insurance types accepted</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">Medicaid</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">Medicare</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Commercial/private</label>
+		      </div>
+		     
+		    </div>
+
+		    <h3 class="search-filters-title" id="search-filters-title">Staff involved</h3>
+
+    
+		    <div class="size-filters filter-group">
+		    	
+		      <div>
+		        <input type="checkbox" id="filter-size-small">
+		        <label for="filter-size-small">MD/DO</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-medium" checked>
+		        <label for="filter-size-medium">RN</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">LPN</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">NP</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">PA</label>
+		      </div>
+		      
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">MA/label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">PT/OT</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Social worker</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Pharmacist</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Students</label>
+		      </div>
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Community Health worker</label>
+		      </div>
+		  
+		      <div>
+		        <input type="checkbox" id="filter-size-large">
+		        <label for="filter-size-large">Administrative assistant/project manager</label>
+		      </div>
+		    </div>
+		    <div class="content-filters filter-group">
+		      <h3 class="search-filters-title" id="search-filters-title">PCMH</h3>
+		      <div>
+		        <input type="radio" id="filter-content-cats" name="filter-content">
+		        <label for="filter-content-cats">YES</label>
+		      </div>
+		      
+		      <div>
+		        <input type="radio" id="filter-content-dogs" name="filter-content">
+		        <label for="filter-content-dogs">NO</label>
+		      </div>
+		    </div>
+    	
+    		<small class="filter-explanation">Choosing filters automatically refines and refreshes search.</small>
+    
+  		</section>
+	</form>
+
+
+<section class="search-results">
+	{% for r in results %}
+
+    	<left>
+    		<form action="/intervention" method="post">
+
+  				<input type="submit" name="sub" value= "{{r.Title}}" ></input>
+			</form>
+    		
+
+			<h4 font-size=20px>{{r.Organization}}</h4>
+			<br><br>
+		</left>
+
+
+    {% endfor %}
+  
+  
+</section>
+</div>
+
+{% endblock %}

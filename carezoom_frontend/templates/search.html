@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+{% block main %}
+<h2 align=center>Search</h2>
+<center><h3> Let's get started. Tell us what you're looking for.</h3></center><br><br>
+<form action="{{ url_for('search') }}" method="post">
+<center>
+	<fieldset>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" name="intervention" placeholder="Type of intervention" type="text" style="width: 500px; height: 70px; font-size: 24px" />
+            </div><br><br>
+         <div class="container1">
+            <div>
+                <input autocomplete="off" autofocus class="form-control" name="setting" placeholder="Which setting?" type="text"/>
+            </div>
+  			<div>
+                <input autocomplete="off" autofocus class="form-control" name="emrpref" placeholder="EMR Preference?" type="text"/>
+            </div>
+            <div>
+                <input autocomplete="off" autofocus class="form-control" name="budget" placeholder="Budget (in thousands)" type="text"/>
+            </div>
+</div>
+<br> <br>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Search</button>
+            </div>
+        </fieldset>
+</center>
+</form>
+
+{% endblock %}
+

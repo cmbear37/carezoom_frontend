@@ -1,0 +1,31 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Innovators
+{% endblock %}
+{% block main %}
+
+
+
+<center>
+{% for i in innovatorsAll %}
+
+    	<left>
+    		<form action="/innovator" method="post">
+
+  				
+  				<input type="submit" name="sub" value= "{{i}}" ></input>
+			</form>
+    		
+
+			<h4 font-size=20px style="width: 80%">{{innovatorsAll[i].Bio}}</h4>
+			<br><br>
+		</left>
+
+
+    {% endfor %}
+
+</center>
+
+
+{% endblock %}
