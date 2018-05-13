@@ -58,7 +58,6 @@ def search():
     return render_template("search.html")'''
 @app.route("/innovators")
 def innovators():
-    print("In", innovatorsAll)
     return render_template("innovatorList.html", innovatorsAll=innovatorsAll)
 
 @app.route("/innovator", methods=["POST"])
