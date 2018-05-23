@@ -7,15 +7,17 @@
 {% block main %}
 <style>
 h2 {
-    display: block;
+    display: inline;
     font-size: 2em;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;
     margin-right: 0;
-    width:100%;
+    width:80%;
     font-weight: bold;
     text-align: left;
+    line-height: 67px;
+    padding-left: 10px;
 
 }
 .accordion {
@@ -37,6 +39,23 @@ h2 {
     color:white;
 }
 
+.accordion:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    padding: 20px 0;
+    padding-right: 10px;
+}
+
+.active:after {
+    content: "\2212";
+    color:white;
+    padding-right: 10px;
+
+}
+
 .panel {
     padding: 0 0px;
     background-color: #ba4444;
@@ -44,6 +63,8 @@ h2 {
     color: white;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 
@@ -62,7 +83,8 @@ h2 {
 </blockquote>
 
 
-<button class="accordion"><h2> Organization</h2></button>
+
+<button class="accordion"><h2> Background</h2></button>
 <div class="panel">
   <p>{{info.Organization}}</p>
 </div>
@@ -89,7 +111,7 @@ h2 {
 
 
 <figure>
-<img src="https://mave.me/img/projects/full_placeholder.png">	
+
 <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/d4lk2en4x9r4mxbfzogw.png">
 <img src="https://mail.google.com/mail/u/0/?ui=2&ik=ef7fe83783&view=att&th=1635bfceea7670a9&attid=0.1&disp=safe&realattid=f_jh5hs8zj0&zw">	
 
