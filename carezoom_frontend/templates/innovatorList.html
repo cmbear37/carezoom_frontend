@@ -4,29 +4,72 @@
     Innovators
 {% endblock %}
 {% block main %}
+<style>
+  .profile-teaser-left {
+    float: left; width: 30%; margin-right: 1%;
+}
+.profile-img img {
+    width: 100%; height: auto;
+}
+
+.profile-teaser-main {
+    float: left; width: 69%;
+}
+
+.info { display: block; margin-right: 5px; color: white; text-align: left; }
+.info span { font-weight: bold; }
+
+input[type=submit] {
+    width: 100%;
+    background-color: #ba4444;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    padding-top: 10px;
+}
+
+input[type=submit]:hover {
+    background-color: #c64343;
+}
+</style>
+
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+  <div class="row">
+    <center><div class="list-group" style="width: 80%">
+      {% for i in innovatorsAll %}
+            <div class="list-group-item clearfix" style="background-color: #ba4444">
+                <div class="profile-teaser-left">
+                    <div class="profile-img"><img src="{{innovatorsAll[i].ImageUrl}}"/></div>
+                </div>
+                <div class="profile-teaser-main">
+                    <h2 class="profile-name">
+                    <form action="/innovator" method="post" target="_blank">
+                    <input type="submit" name="sub" value= "{{i}}" ></input>
+                    </form></h2>
+                    <div class="profile-info" style="width: 95%">
+                        <div class="info"><span class="">Institution:</span> {{innovatorsAll[i].Institution}}</div> <br>
+                        <div class="info" style="text-align: justify;"><span class="">Bio:</span> {{innovatorsAll[i].Bio}}</div>
+                    </div>
+                </div>
+            </div><br><br><!-- item -->
+          {% endfor %}
+            <!-- item -->
+          
+        </div></center>
+  </div>
+</div>
 
 
 
-<center>
-{% for i in innovatorsAll %}
-
-    	<left>
-
-    		<form action="/innovator" method="post" target="_blank">
-
-  				
-  				<input type="submit" name="sub" value= "{{i}}" ></input>
-			</form>
-    		
-
-			<h4 font-size=20px style="width: 80%">{{innovatorsAll[i].Bio}}</h4>
-			<br><br>
-		</left>
-
-
-    {% endfor %}
-
-</center>
 
 
 {% endblock %}

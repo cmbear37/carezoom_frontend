@@ -1,8 +1,10 @@
+
 * {
   box-sizing: border-box; 
 }
 body {
-  font: normal 18px/1.5 "arial", "arial", sans-serif;
+  
+  font-family: 'PT Serif', serif;
   background: #ba4444;
   color: #fff;
 
