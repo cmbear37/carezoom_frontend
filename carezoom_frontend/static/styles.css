@@ -16,7 +16,9 @@ article {
 article > * {
     grid-column: 2;
 }
-
+a {
+    font-size: 22px;
+}
 
 .screen-reader-text {
   position: absolute;
@@ -47,6 +49,25 @@ article > * {
   font-weight: normal;
   font-size: 1em;
   margin: 0 0 10px 0;
+  background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+
+}
+
+.active, .search-fiters-title:hover {
+    background-color: #555;
+}
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
 }
 .filter-group {
   margin: 0 0 10px 0;
@@ -241,8 +262,8 @@ input[type=textbig]{
 
 input[type=submit] {
     width: 100%;
-    background-color: #3aafab;
-    color: white;
+    background-color: #f2e2e1;
+    color: black;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
@@ -252,7 +273,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #40c4bf;
+    background-color: #d2c9c6;
 }
 
 .flex-outer {

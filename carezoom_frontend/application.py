@@ -4,12 +4,30 @@ from flask_session import Session
 from passlib.apps import custom_app_context as pwd_context
 from tempfile import mkdtemp
 from helpers import *
+import csv
 
 
+import pandas as pd
+from pandas import ExcelWriter
+from pandas import ExcelFile
 
-# configure application
+ 
+ # configure application
 app = Flask(__name__)
 
+
+df = pd.read_excel('entries.xlsx')
+entries = df.to_dict(orient='records')
+
+
+
+
+
+#using csv
+
+
+
+'''
 #VERSION WITHOUT SQL
 global entries 
 entries = {}
@@ -21,6 +39,7 @@ entries['BMC Hepatitis C'] = {'Title':'BMC Hepatitis C','Keywords':['hepatitis',
 "Outcomes":"The key outcome was clinic attendance rate (# appointments attended/total # appointments schedules) for physician visits in the Boston Medical Center Primary Care Hepatitis C Treatment Program. 198 patients were scheduled for visits during this intervention. Data analysis showed that patient attendance increased from 61% in April-June 2016 to 73% in April-June 2017 with the incentive, (78% if only counting patients informed of the incentive by the social worker in the analysis). More complex analysis was also performed. A logistic regression, controlling for age, sex, race, and insurance type, showed that odds of a patient attending a visit during the intervention in 2017 was 2.05 times the odds of a patient attending a visit during the same 3-month period in 2016 (CI 1.25-3.36, p=0.005). An interrupted time series analysis was also performed and showed that the effect of the intervention was independent of larger trends over the study period. ",
 "Setup":"The Boston Medical Center Primary Care Hepatitis C Treatment Program’s no show rate (# missed appointments/total # appointments scheduled) was 40% during its first few years, much higher than the 25% no show rate hospital-wide. The program director decided an intervention was necessary to get patients to attend the appointments necessary to treat their disease. The team considered QI projects around patient navigation and case management, but they felt the social worker was providing these services well. The social worker mentioned that patients had reported not coming to clinic for financial reasons (unable to miss work, issues with transportation, no childcare available). They decided to try a monetary incentive program. While this has not been implemented for hepatitis C treatment, it has been shown to be effective in care for HIV, substance use disorder, and smoking cessation. They received a grant from the Boston University Center for Implementation and Improvement Science for a pilot project providing $15 gift cards to patients who attend their scheduled appointments with physicians. They decided to forego a randomized control trial and provide gift cards to all patients who attended physician appointments for ethical reasons. They chose to conduct the pilot from April through June, as there would be fewer weather problems and holidays to inhibit attendance.  They also consulted the BMC legal team, who advised them that it was legal to provide monetary incentives to patients to promote access to care and that hospital policy stipulated the maximum amount to give is $15 per visit and $75 annually. Data collection was key to this intervention. A research assistant was hired to collect and analyze the data during the pilot, as well as assist the team in conducting interviews with both hospital stakeholders to learn their thoughts on the sustainability, feasibility, ethics, and acceptability of the intervention and also patients to hear about their experience with the intervention. "}
 entries["Improving Hypertension Control in Academic Primary Care Practice"]={'Title': "Improving Hypertension Control in Academic Primary Care Practice", "Keywords": ['hypertension', 'tufts', 'bp', 'bp control']}
+'''
 global innovatorAll
 innovatorsAll = {}
 innovatorsAll['Cynthia So-Armah MD MPH'] = {"Name": 'Cynthia So-Armah MD MPH', "ImageUrl": "https://lh6.googleusercontent.com/Sr81oRxzpp-HICFt9JBgz5v5IvRqXf7Eqt9Eusbmc2zime1YMjVwVtcYjE2ekkBqBeyf1iF1KDei7zxe6M5FOrs08aRiZs_AfPqYOPpOo1wRUKlwkTtaZXMAMhUHqTlCLgiw_i4u", "Institution": "Brookside Community Health Center, Jamica Plain, MA", "Bio": "Dr. Cynthia So-Armah is a primary care internist at Brookside Community Health Center in Jamaica Plain, MA. She also serves as lead physician for QI at Brookside, as well as assistant program director of QI for the Brigham and Women's Hospital internal medicine residency program. She is a graduate of UCSF medical school and completed her residency in primary care internal medicine at Brigham and Women's Hospital. Prior to pursuing medicine, she was a Latin American Studies major at Yale and co-founded a non-profit organization called Yspaniola that promotes quality education and full citizenship for Dominicans and Dominicans of Haitian descent living in bateys of the Dominican Republic."}
@@ -93,8 +112,9 @@ def index():
 def intervention():
     title = request.form['sub']
     print("The email address is '" + title + "'")
-    info = entries[title]
-    return render_template("intervention.html",title=title, info=info)
+    info = [intervention for intervention in entries if intervention['title'] == title]
+    print("info", info)
+    return render_template("intervention.html",title=title, info=info[0])
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -105,7 +125,7 @@ def search():
 
         # validate form submission
         if not request.form.get("intervention"):
-            return render_template("results.html", results=entries.values())
+            return render_template("results.html", results=entries)
         ''' 
         elif not request.form.get("setting"):
             return apology("missing setting")
@@ -114,16 +134,31 @@ def search():
         elif not request.form.get("budget"):
             return apology("missing budget")'''
         
+
         results = []
+        print("intervention", request.form.get("intervention") )
+        ''''
+        for index, row in entries.iterrows():
+            print("row", row)
+            keywords = row['keywords']
+            print("dtf", keywords)
+            keywords = [x.strip() for x in keywords.split(',')]
+            print("heyy", keywords)
+            print(request.form.get("intervention") )
+            if request.form.get("intervention") in keywords:
+                results.append(row)
+        '''
+        
+        entries_stringed = {}
         for k in entries:
-            print('entries', entries[k]['Keywords'])
-            print('term', request.form.get("intervention"))
-            if request.form.get("intervention") in entries[k]['Keywords']:
-                print('ya')
-                results.append(entries[k])
+            print("hehrere", k['keywords'])
+            if request.form.get("intervention") in k['keywords']:
+                results.append(k)
+            entries_stringed[k['title']]=str(k)
+        
+        print("string cheese", entries_stringed)
 
-
-        return render_template("results.html", results=results)
+        return render_template("results.html", results=results, entries=entries_stringed)
 
 
     # GET
