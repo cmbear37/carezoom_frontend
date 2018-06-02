@@ -48,16 +48,16 @@ input[type=submit]:hover {
       {% for i in innovatorsAll %}
             <div class="list-group-item clearfix" style="background-color: #ba4444">
                 <div class="profile-teaser-left">
-                    <div class="profile-img"><img src="{{innovatorsAll[i].ImageUrl}}"/></div>
+                    <div class="profile-img"><img src="{{i.imageurl}}"/></div>
                 </div>
                 <div class="profile-teaser-main">
                     <h2 class="profile-name">
                     <form action="/innovator" method="post" target="_blank">
-                    <input type="submit" name="sub" value= "{{i}}" ></input>
+                    <input type="submit" name="sub" value= "{{i.name}}" ></input>
                     </form></h2>
                     <div class="profile-info" style="width: 95%">
-                        <div class="info"><span class="">Institution:</span> {{innovatorsAll[i].Institution}}</div> <br>
-                        <div class="info" style="text-align: justify;"><span class="">Bio:</span> {{innovatorsAll[i].Bio}}</div>
+                        <div class="info"><span class="">Institution:</span> {{i.institution}}</div> <br>
+                        <div class="info" style="text-align: justify;"><span class="">Bio:</span> {{i.bio}}</div>
                     </div>
                 </div>
             </div><br><br><!-- item -->
@@ -67,6 +67,7 @@ input[type=submit]:hover {
         </div></center>
   </div>
 </div>
+
 
 
 

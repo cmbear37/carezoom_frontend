@@ -16,9 +16,14 @@ from pandas import ExcelFile
 app = Flask(__name__)
 
 
-df = pd.read_excel('entries.xlsx')
-entries = df.to_dict(orient='records')
+df1 = pd.read_excel('entries.xlsx')
+entries = df1.to_dict(orient='records')
 
+df2 = pd.read_excel('innovatorsAll.xlsx')
+innovatorsAll = df2.to_dict(orient='records')
+
+df3 = pd.read_excel('teamMembers.xlsx')
+teamMembers = df3.to_dict(orient='records')
 
 
 
@@ -40,11 +45,7 @@ entries['BMC Hepatitis C'] = {'Title':'BMC Hepatitis C','Keywords':['hepatitis',
 "Setup":"The Boston Medical Center Primary Care Hepatitis C Treatment Program’s no show rate (# missed appointments/total # appointments scheduled) was 40% during its first few years, much higher than the 25% no show rate hospital-wide. The program director decided an intervention was necessary to get patients to attend the appointments necessary to treat their disease. The team considered QI projects around patient navigation and case management, but they felt the social worker was providing these services well. The social worker mentioned that patients had reported not coming to clinic for financial reasons (unable to miss work, issues with transportation, no childcare available). They decided to try a monetary incentive program. While this has not been implemented for hepatitis C treatment, it has been shown to be effective in care for HIV, substance use disorder, and smoking cessation. They received a grant from the Boston University Center for Implementation and Improvement Science for a pilot project providing $15 gift cards to patients who attend their scheduled appointments with physicians. They decided to forego a randomized control trial and provide gift cards to all patients who attended physician appointments for ethical reasons. They chose to conduct the pilot from April through June, as there would be fewer weather problems and holidays to inhibit attendance.  They also consulted the BMC legal team, who advised them that it was legal to provide monetary incentives to patients to promote access to care and that hospital policy stipulated the maximum amount to give is $15 per visit and $75 annually. Data collection was key to this intervention. A research assistant was hired to collect and analyze the data during the pilot, as well as assist the team in conducting interviews with both hospital stakeholders to learn their thoughts on the sustainability, feasibility, ethics, and acceptability of the intervention and also patients to hear about their experience with the intervention. "}
 entries["Improving Hypertension Control in Academic Primary Care Practice"]={'Title': "Improving Hypertension Control in Academic Primary Care Practice", "Keywords": ['hypertension', 'tufts', 'bp', 'bp control']}
 '''
-global innovatorAll
-innovatorsAll = {}
-innovatorsAll['Cynthia So-Armah MD MPH'] = {"Name": 'Cynthia So-Armah MD MPH', "ImageUrl": "https://lh6.googleusercontent.com/Sr81oRxzpp-HICFt9JBgz5v5IvRqXf7Eqt9Eusbmc2zime1YMjVwVtcYjE2ekkBqBeyf1iF1KDei7zxe6M5FOrs08aRiZs_AfPqYOPpOo1wRUKlwkTtaZXMAMhUHqTlCLgiw_i4u", "Institution": "Brookside Community Health Center, Jamica Plain, MA", "Bio": "Dr. Cynthia So-Armah is a primary care internist at Brookside Community Health Center in Jamaica Plain, MA. She also serves as lead physician for QI at Brookside, as well as assistant program director of QI for the Brigham and Women's Hospital internal medicine residency program. She is a graduate of UCSF medical school and completed her residency in primary care internal medicine at Brigham and Women's Hospital. Prior to pursuing medicine, she was a Latin American Studies major at Yale and co-founded a non-profit organization called Yspaniola that promotes quality education and full citizenship for Dominicans and Dominicans of Haitian descent living in bateys of the Dominican Republic."}
-innovatorsAll['Jane Erb MD'] = {"Name": "Jane Erb MD", "ImageUrl":"https://lh5.googleusercontent.com/d087O0-HXLu8q0-UTTpkjHPUjbRqQNdCy1Wo64heWggKBMTT-VRqK9bQiHXEyBK5Dcqy-vgpsTIxPDfDf6Lv9hQrwyTLmNLH4VbzQ3UE2gEHQTP7BIskOnKM38oHtSoSCSLUvOru", "Institution": "Brigham and Women's Hospital", "Bio":"Having completed my residency training at UCLA Neuropsychiatric Institute in the late 1980s, I was immersed in an environment that emphasized integrating the mind with the brain through having been trained by clinicians and researchers who valued integrating psychoanalytic, cognitive-behavioral, social, and neuroscience models for understanding human behavior and treating mental illness from the start.  Largely because of my mentors, my training ran especially deep in eating and sleep disorders.  Consequently, I have always been attuned to and emphasized the basics of diet and sleep.  Over the years, I have acquired increasing psychopharmacologic expertise through my clinical practice, collaboration with those engaged in clinical trials, and teaching our resident psychiatrists.  In addition to my clinical and teaching activities, I have been working with BWH Population Health to build an integrated behavioral health program to care for the psychiatric needs of patients in the primary care setting.  My experience in that area began in 2011 when I became part of the South Huntington Advanced Primary Care practice to develop a model there.  Building upon my experience there and as an effort to address depression care where most of it already is being delivered, in Primary Care, I became involved in a Partners-wide project to develop a collaborative care program to assist Primary Care Practices throughout all Partners’ RSOs to integrate depression care into their daily workflow. Since then, I have worked closely with BWH Primary Care leadership to guide the roll out of collaborative care at all BWH practices and continue as a consulting psychiatrist now at 4 BWH practices.  It has been a joy to see clinicians providing more sophisticated psychiatric assessments, increasingly promoting non-pharmacologic interventions in managing their patients with milder illness, and encouraging the same in conjunction with Rx intervention for those with more severe depression. "}
-# ensure responses aren't cached
+
 if app.config["DEBUG"]:
     @app.after_request
     def after_request(response):
@@ -85,7 +86,7 @@ def innovators():
 def innovator():
     title = request.form['sub']
     print("The email address is '" + title + "'")
-    info = innovatorsAll[title]
+    info = [innovator for innovator in innovatorsAll if ['name'] == title]
     return render_template("intervention.html",title=title, info=info)
 @app.route("/add")
 def add():
@@ -98,7 +99,7 @@ def profile():
 
 @app.route("/team")
 def team():
-    return render_template("meetTheTeam.html")
+    return render_template("meetTheTeam.html", teamMembers=teamMembers)
 
 @app.route("/talk")
 def talk():

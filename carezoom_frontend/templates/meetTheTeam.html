@@ -60,132 +60,20 @@ h3{
 
 <h2 style="text-align:center">Our Team</h2><br>
 <ul class="flex-container">
+	{% for t in teamMembers %}
   <div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/Lisa_Rotenstein_Headshot_2_sn5bfs.jpg" alt="Lisa" style="width:100%">
-  <h3 style="color:black;">Lisa Rotenstein, MD MBA</h3>
-  <p class="title">Co-founder</p>
-  <p>Brigham Internal Medicine Resident</p> <p>Harvard Medical School and Harvard Business School graduate</p>
-<p>MedTech Boston's 40 under 40 in Healthcare; World Economic Forum Global Shaper</p>
-<p>Previous Director of IT and Editor-in-Chief at Close Concerns</p>
-<p>Healthcare innovation at BWH, DFCI, HMS Center for Primary Care</p>
-<p>Published in JAMA, Lancet, NEJM</p>
+  <img src={{t.imageurl}} alt={{t.name}} style="width:100%">
+  <h3 style="color:black;">{{t.name}}</h3>
+  <p class="title">{{t.title}}</p>
+  <p>{{t.bio}}</p>
   <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
+    <a href="{{t.twitter}}"><i class="fa fa-twitter"></i></a>  
+    <a href="{{t.linkedin}}"><i class="fa fa-linkedin"></i></a>  
+    <a href="{{t.facebook}}"><i class="fa fa-facebook"></i></a> 
  </div>
  <p><button>Contact</button></p>
 </div>
-
-<div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/Ashley_Shaw_Face_b8mnbk.jpg" alt="Ashley" style="width:100%">
-  <h3 style="color:black;">Ashley Shaw, BA</h3>
-  <p class="title">Co-founder</p>
-  <p>MD/MBA Candidate at Harvard Medical School and Harvard Business School
-
-Columbia graduate
-
-Project coordinator for Quality of Life/Administration @ ArchCare
-
-Co-leader, Student Leadership Committee at HMS Center for Primary Care
-
-Medicaid ACO Researcher @ Mass General Hospital</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-</ul>
-<br>
-<ul class="flex-container">
-  <div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/christina_bear_qopaty.jpg" alt="Christina" style="width:100%">
-  <h3 style="color:black;">Christina Bear</h3>
-  <p class="title">Technical Lead</p>
-  <p>Christina is a BS Candidate in Computer Science at Harvard College. She is a CS50 Teaching Fellow and a Co-Founder of BubbleBox (providing mobile hygiene for migrants and refugees). She also serves on the Crimson Technology Board and is a researcher in the Computer Science Department at Harvard.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-<div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/afa4bb9a-e471-4ba4-aa53-abe2b916d454_zgvtxn.jpg" alt="Meg" style="width:100%">
-  <h3>Meg Krasne, BA</h3>
-  <p class="title">Director of Content</p>
-  <p>Meg is an MD/MPH Candidate at Harvard Medical School and Harvard T.H. Chan School of Public Health. She graduated from the University of Pennsylvania. She was a 2017-2018 Harvard Kennedy School Center for Public Leadership Zuckerman Fellow and is a health systems researcher with the BetterBirth team at Ariadne Labs. She is also a clinical researcher with the Young Women's Cohort at the Dana Farber Cancer Institute.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-</ul>
-<br>
-<ul class="flex-container">
-  <div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/e1927c75-6ae5-4b89-940b-ac39de66a9f5_ilo1ib.png" alt="Festus" style="width:100%">
-  <h3>Festus Ojo</h3>
-  <p class="title">Student Editor</p>
-  <p>Nigerian native by way of Atlanta, Georgia, Festus Ojo is a current freshman at Harvard College. He is planning on concentrating in chemistry but having a secondary in computer science. He aspires to use the worlds of business, technology, and medicine to impact those in need and make a difference in the world around them. He is passionate about the world of medicine and its wide range of applications to help others in need.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="https://www.linkedin.com/in/festuso/"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-<div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/2164a8d0-c510-41c0-89e9-756b66c8495f_d1hjy1.jpg" alt="Selena" style="width:100%">
-  <h3>Selena Zhang</h3>
-  <p class="title">Student Editor</p>
-  <p>Selena is a student at Harvard College studying Biomedical Engineering. She aspires to create opportunities for and with others, and she hopes to one day serve people through health and medicine. As a student researcher, Selena joined CareZoom because she is passionate about using science to drive improvements in care. Originally from California, Selena spends most of her free time here in Boston as a frozen but very happy popsicle.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="https://www.linkedin.com/in/selena-zhang-3463a8ba/"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-
-<div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/Arambi_Pic_uimmkr.jpg" alt="Arambi" style="width:100%">
-  <h3>Arambi Eyong</h3>
-  <p class="title">Student Editor</p>
-  <p>
-Arambi is a sophomore studying History and Science at Harvard College. She is interested in the influence of poverty and race on health outcomes. As a member of CareZoom, she hopes to contribute to the existing literature of healthcare innovations that improve primary care. Arambi intends to pursue a career in a health related field upon graduation from college.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="#"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
-
-<div class="card">
-  <img src="https://res.cloudinary.com/hrscywv4p/image/upload/c_limit,fl_lossy,h_1440,w_720,f_auto,q_auto/v1/1275274/Victor_pic_g8lgdc.jpg" alt="Victor" style="width:100%">
-  <h3>Victor Abgafe</h3>
-  <p class="title">Student Editor</p>
-  <p>Victor Agbafe is a rising senior at Harvard College who is concentrating in government while on the premedical track due to his interest in policy and reforming how healthcare is delivered. Victor is very excited to contribute to the work that CareZoom does because he believes that it is very important to share information on best practices in medicine in order to create a more efficient and equitable healthcare system.</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a> 
-    <a href="#"><i class="fa fa-twitter"></i></a>  
-    <a href="https://www.linkedin.com/in/victor-agbafe-56622abb/"><i class="fa fa-linkedin"></i></a>  
-    <a href="#"><i class="fa fa-facebook"></i></a> 
- </div>
- <p><button>Contact</button></p>
-</div>
+{% endfor %}
 </ul>
 
 </body>
