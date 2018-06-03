@@ -77,7 +77,7 @@ h2 {
 <article>
 
 
-<h2 style="font-size: 3em; text-align: left">{{title}}</h2>
+<h2 style="font-size: 3em; text-align: left">{{info.title}}</h2>
 <blockquote>
 <p>{{info.overview}}</p>
 </blockquote>
@@ -86,27 +86,37 @@ h2 {
 
 <button class="accordion"><h2> Background</h2></button>
 <div class="panel">
-  <p>{{info.background}}</p>
+  <p>{{info.orgtypetext}}</p>
+  <p>{{info,orgcontextmacro}}</p>
+  <p>{{info.orgcontextleader}}</p>
 </div>
 
 <button class="accordion"><h2> Daily Workflow</h2></button>
 <div class="panel">
-  <p>{{info.workflow}}</p>
+
+  <p>{{info.dailyworkflowbrief}}</p>
+  <h3> Steps</h3>
+  <p>{{info.dailyworfklowsteps}}</p>
 </div>
 
 <button class="accordion"><h2> Budget</h2></button>
 <div class="panel">
-  <p>{{info.budget}}</p>
+  <p>{{info.budgetdetails}}</p>
 </div>
 
 <button class="accordion"><h2> Setup</h2></button>
 <div class="panel">
-  <p>{{info.setup}}</p>
+	<h3>Program Setup - Leadership</h3>
+  <p>{{info.progsetupleader}}</p>
+  <p>{{info.progsetupapp}}</p>
+  <p>{{info.progsetupresearch}}</p>
+  <p>{{info.progsetuptools}}</p>
+  <p>{{info.progsetuptraining}}</p>
 </div>
 
 <button class="accordion"><h2> Outcomes</h2></button>
 <div class="panel">
-  <p>{{info.outcomes}}</p>
+  <p>{{info.outcomeskey}}</p>
 </div>
 
 

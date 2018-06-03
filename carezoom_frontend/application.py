@@ -25,6 +25,8 @@ innovatorsAll = df2.to_dict(orient='records')
 df3 = pd.read_excel('teamMembers.xlsx')
 teamMembers = df3.to_dict(orient='records')
 
+df4 = pd.read_excel('entries2.xlsx')
+entries2 = df4.to_dict(orient='records')
 
 
 
@@ -85,9 +87,10 @@ def innovators():
 @app.route("/innovator", methods=["POST"])
 def innovator():
     title = request.form['sub']
-    print("The email address is '" + title + "'")
-    info = [innovator for innovator in innovatorsAll if ['name'] == title]
-    return render_template("intervention.html",title=title, info=info)
+    print("The name email address is '" + title + "'")
+    info = [innovator for innovator in innovatorsAll if innovator['name'] == title]
+    print("info", info)
+    return render_template("intervention.html",title=title, info=info[0])
 @app.route("/add")
 def add():
     return render_template("add.html")
@@ -151,7 +154,9 @@ def search():
         '''
         
         entries_stringed = {}
+        print("entereeeeeee", entries)
         for k in entries:
+            print("k", k)
             print("hehrere", k['keywords'])
             if request.form.get("intervention") in k['keywords']:
                 results.append(k)
