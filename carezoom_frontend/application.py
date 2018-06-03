@@ -23,6 +23,8 @@ innovatorsAll = df2.to_dict(orient='records')
 
 df3 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/teamMembers.xlsx')
 teamMembers = df3.to_dict(orient='records')
+df4 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/entries3.xlsx')
+entries3= df4.to_dict(orient='records')
 
 
 if app.config["DEBUG"]:
@@ -93,7 +95,7 @@ def index():
 def intervention():
     title = request.form['sub']
     print("The email address is '" + title + "'")
-    info = [intervention for intervention in entries if intervention['title'] == title]
+    info = [intervention for intervention in entries3 if intervention['title'] == title]
     print("info", info)
     return render_template("intervention.html",title=title, info=info[0])
 
@@ -131,8 +133,8 @@ def search():
         '''
         
         entries_stringed = {}
-        print("entereeeeeee", entries)
-        for k in entries:
+        print("entereeeeeee", entries3)
+        for k in entries3:
             print("k", k)
             print("hehrere", k['keywords'])
             if request.form.get("intervention") in k['keywords']:

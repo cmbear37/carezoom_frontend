@@ -333,7 +333,7 @@ article > flowers-wraps {
 	<div class="flowers">
   {% for r in results %}
 
-  			<div class="flower" data_id="{{r.title}}" data-category="{{r.filters}}">
+  			<div class="flower" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
 
   				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
