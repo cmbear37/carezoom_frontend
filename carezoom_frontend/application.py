@@ -15,8 +15,7 @@ from pandas import ExcelFile
 app = Flask(__name__)
 
 
-df1 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/entries.xlsx')
-entries = df1.to_dict(orient='records')
+
 
 df2 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/innovatorsAll.xlsx')
 innovatorsAll = df2.to_dict(orient='records')
