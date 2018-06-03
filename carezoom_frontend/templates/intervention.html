@@ -86,9 +86,13 @@ h2 {
 
 <button class="accordion"><h2> Background</h2></button>
 <div class="panel">
-	<p>{{info.orgtypetags}}</p>
+	<h4>Tags</h4>
+	<p>{{info.orgtypetag}}</p>
+	<h4>Text</h4>
   <p>{{info.orgtypetext}}</p>
-  <p>{{info,orgcontextmacro}}</p>
+  <h4>Macro Trends</h4>
+  <p>{{info.orgcontextmacro}}</p>
+  <h4>Conext</h4>
   <p>{{info.orgcontextleader}}</p>
 </div>
 
@@ -96,7 +100,7 @@ h2 {
 <div class="panel">
 
   <p>{{info.dailyworkflowbrief}}</p>
-  <h3> Steps</h3>
+  <h4> Steps</h4>
   <p>{{info.dailyworfklowsteps}}</p>
 </div>
 
@@ -107,17 +111,26 @@ h2 {
 
 <button class="accordion"><h2> Setup</h2></button>
 <div class="panel">
-	<h3>Program Setup - Leadership</h3>
+	<h4>Leadership</h4>
   <p>{{info.progsetupleader}}</p>
+  <h4>Funds</h4>
   <p>{{info.progsetupapp}}</p>
+  <h4>Research</h4>
   <p>{{info.progsetupresearch}}</p>
+  <h4>Products</h4>
   <p>{{info.progsetuptools}}</p>
+  <h4>Training</h4>
   <p>{{info.progsetuptraining}}</p>
 </div>
 
 <button class="accordion"><h2> Outcomes</h2></button>
 <div class="panel">
+	<h4>Key Outcome</h4>
   <p>{{info.outcomeskey}}</p>
+  <h4>Analysis</h4>
+  <p>{{info.outcomesanalysis}}</p>
+  <h4>Future Outcomes</h4>
+  <p>{{info.outcomesfuture}}</p>
 </div>
 
 
