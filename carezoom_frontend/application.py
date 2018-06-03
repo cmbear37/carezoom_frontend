@@ -18,10 +18,10 @@ app = Flask(__name__)
 df1 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/entries.xlsx')
 entries = df1.to_dict(orient='records')
 
-df2 = pd.read_excel('innovatorsAll.xlsx')
+df2 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/innovatorsAll.xlsx')
 innovatorsAll = df2.to_dict(orient='records')
 
-df3 = pd.read_excel('teamMembers.xlsx')
+df3 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/teamMembers.xlsx')
 teamMembers = df3.to_dict(orient='records')
 
 if app.config["DEBUG"]:
