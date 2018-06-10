@@ -136,8 +136,8 @@ def search():
         print("entereeeeeee", entries3)
         for k in entries3:
             print("k", k)
-            print("hehrere", k['keywords'])
-            if request.form.get("intervention") in k['keywords']:
+            print("hehrere", k['searchterms'])
+            if request.form.get("intervention") in k['searchterms']:
                 results.append(k)
             entries_stringed[k['title']]=str(k)
         
