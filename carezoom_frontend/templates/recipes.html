@@ -125,8 +125,7 @@ article > flowers-wraps {
 	<div class="flowers">
   {% for r in entries %}
     {% if not r.title == 'Title' %}
-    <div class="container">
-  			<div class="flower" data_id="{{r.title}}" data-category="{{r.filter}}">
+  			<div class="flower" style="padding-bottom:20px" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
 
   				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
@@ -134,10 +133,9 @@ article > flowers-wraps {
     		
       <h4 font-size=15px>{{r.innovname}}</h4>
       <h4 font-size=15px>{{r.editorname}}</h4>
-			<h4 font-size=20px>{{r.overview}}</h4></div>
+			<h4 font-size=20px>{{r.overview}}</h4> </div>
 			
-    </div>
-    <br><br> <br><br>
+
     {% endif %}
 
   {% endfor %}
