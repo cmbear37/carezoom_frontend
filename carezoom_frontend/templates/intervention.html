@@ -67,6 +67,9 @@ h2 {
     padding-right: 10px;
 }
 
+h4 {
+	font-style: italic;
+}
 
 
 
@@ -78,6 +81,13 @@ h2 {
 
 
 <h2 style="font-size: 3em; text-align: left">{{info.title}}</h2>
+<br>
+<h4>Innovator: </h4>{{info.innovname}}<br>
+<h4>Editor: </h4>{{info.editorname}}<br>
+<h4>Editor: </h4>{{info.clinname}}<br>
+<h4>Editor: </h4>{{info.orgname}}<br>
+<h4>Editor: </h4>{{info.location}}<br>
+
 <blockquote>
 <p>{{info.overview}}</p>
 </blockquote>
@@ -178,7 +188,7 @@ h2 {
   <p>{{info.ratingdesc}}</p>
 </div>
 
-<button class="accordion"><h2> Literary Review</h2></button>
+<button class="accordion"><h2> Literature Review</h2></button>
 <div class="panel">
   <p>{{info.litrev}}</p>
   <h4>References</h4>
