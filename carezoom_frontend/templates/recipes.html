@@ -1,0 +1,150 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<style>
+	body {
+  font-family: 'PT Serif', serif;
+  color: white;
+}
+
+.continents-wrap {
+  float: left;
+  width: 20%;
+  margin: 0 5% 0 0;
+  padding: 0;
+}
+
+.flowers-wrap {
+  float: left;
+  width: 20%;
+  margin: 0 5% 0 0;
+  padding: 0;
+  position: relative;
+}
+
+.flowers {
+  float: left;
+  width: 100%;
+}
+
+.flowers div {
+  text-align: center;
+  width: 100%;
+  height: 68px;
+  line-height: 68px;
+  padding: 0 5%;
+  margin: 0 0 1px;
+  position: relative;
+  color:white;
+}
+
+h3 {
+    display: inline;
+    font-size: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    width:200px;
+    font-weight: bold;
+    text-align: left;
+    line-height: 67px;
+    padding-left: 10px;
+
+}
+.accordion {
+    background-color: #f2e2e1;
+    color: #000;
+    cursor: pointer;
+    padding: 0px;
+    width: 200px;
+    border: none;
+    text-align: left;
+    outline: none;
+
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color: #ba4444;
+    color:white;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    padding: 20px 0;
+    padding-right: 10px;
+}
+
+.active:after {
+    content: "\2212";
+    color:white;
+    padding-right: 10px;
+
+}
+
+.panel {
+    padding: 0 0px;
+    background-color: #ba4444;
+    max-height: 0;
+    color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 200px;
+}
+
+article {
+    display: grid;
+    grid-template-columns: 70px 200px 10px 1000px 1000px;
+}
+article > * {
+    grid-column: 4;
+}
+
+article > flowers-wraps {
+    grid-column: 2 ;
+    margin: 20px 0;
+}
+
+</style>
+<h2 style="text-align:center">All Recipes</h2><br>
+
+<article>
+
+<div class="container" style="align-items: flex-start; width:100%">
+	<div class="flowers">
+  {% for r in entries %}
+
+  			<div class="flower" data_id="{{r.title}}" data-category="{{r.filter}}">
+    		<form action="/intervention" method="post">
+
+  				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
+			</form>
+    		
+
+			<h4 font-size=20px>{{r.overview}}</h4></div>
+			<br><br>
+
+    {% endfor %}
+</div>
+</div>
+
+</article>
+
+
+
+
+
+{% endblock %}
