@@ -55,10 +55,12 @@ def home():
 @app.route("/about")
 def about():
     return render_template("about.html")
-'''
-@app.route("/search")
-def search():
-    return render_template("search.html")'''
+
+@app.route("/recipes")
+def recipes():
+    #return render_template("recipes.html", entries=entries3)
+    return render_template("home.html")
+
 @app.route("/innovators")
 def innovators():
     return render_template("innovatorList.html", innovatorsAll=innovatorsAll)
@@ -108,7 +110,7 @@ def search():
 
         # validate form submission
         if not request.form.get("intervention"):
-            return render_template("results.html", results=entries)
+            return render_template("results.html", results=entries3)
         ''' 
         elif not request.form.get("setting"):
             return apology("missing setting")
