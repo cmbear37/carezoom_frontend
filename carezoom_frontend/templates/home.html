@@ -6,14 +6,16 @@
 {% block main %}
 
 <h2>WHO WE ARE</h2>
-<div class="w3-container">
+<div class="container" style="padding-right:30px; padding-left: 30px; text-align:center">
     <h4>
         <p>
             Healthcare organizations are constantly re-inventing the wheel when it comes to new programs.
         </p>
+        <br>
         <p>
             Our research-supported databank of <b><a href="{{ url_for('search') }}" style="color:white">innovation "recipes"</a></b> and affordable, one-on-one consulting sessions with expert clinician innovators can help you identify & adopt best practices for excellent patient care.
         </p>
+        <br>
         <p>
             <p>Backed by the <b>Harvard Innovation Lab<b>, the <b>Harvard New Venture Competition<b>, and the Brigham Research Institute<b>, we can help move your practice forward.<p> 
         </p>
@@ -30,4 +32,38 @@
             <a href="{{ url_for('search') }}" class="classname">Search for a project</a>
             <a href="{{ url_for('talk') }}" class="classname">Talk to an Expert</a>
             </center>
+
+<h2>FREQUENTLY ASKED QUESTIONS</h2>
+<div class="container" style="padding-right:30px; padding-left: 30px; text-align:center">
+    <ul>
+        <li>What is an innovation “recipe”?</li>
+        <ul>
+            <li>Our innovation “recipes” provide nitty-gritty insight into how a particular intervention was done – what materials were used, what team members were involved, what the budget was, and what the challenges were, for example.</li>
+        </ul>
+        <li>What kind of projects are you interested in?</li>
+        <ul>
+            <li>Our initial focus is in primary care, and in particular, on behavioral health, chronic disease management, new technology, and social determinants of health</li>
+        </ul>
+        <li>Does it take a lot of work to get my project featured?</li>
+        <ul>
+            <li>No! Once you submit a project overview here, our team of amazing graduate students will contact you, talk to you for 30 minutes, and write up your work. You’ll then get to review the writeup, and we’ll feature your picture and bio.</li>
+        </ul>
+        <li>I want to talk to one of the project leaders. How can I do this?</li>
+        <ul>
+            <li>You’re in luck! During our Microconsults pilot (coming soon), you will have the chance to speak to any innovator you want for 30 minutes to an hour and ask specific questions relevant to your situation. Fill out this form for more info.</li>
+        </ul>
+        <li>I’m not at an academic medical center. Are you still interested in my work?</li>
+        <ul>
+            <li>YES! We are looking to feature projects from all around the country, in all sorts of practice settings.</li>
+        </ul>
+        <li>What if I eventually want to publish my work in a journal?</li>
+        <ul>
+            <li>That’s ok from our end! We expect the focus of our “recipes” to be different than what a journal wants – more focused on the process than outcomes – and we can edit your recipe as needed so there isn’t overlap.</li>
+        </ul>
+        <li>What if we’re still working out the kinks for my project?</li>
+        <ul>
+            <li>That’s great!!! We are interested in the process and learnings, not the final polished result. </li>
+        </ul>
+    </ul>
+</div>
 {% endblock %}
