@@ -58,8 +58,8 @@ def about():
 
 @app.route("/recipes")
 def recipes():
-    #return render_template("recipes.html", entries=entries3)
-    return render_template("home.html")
+    return render_template("recipes.html", entries=entries3)
+
 
 @app.route("/innovators")
 def innovators():
