@@ -123,6 +123,11 @@ h4{
   font-size=20px;
   width: 950px;
 }
+a {
+  color:white;
+  padding: 0;
+
+}
 
 
 </style>
@@ -136,7 +141,7 @@ h4{
     		<form action="/intervention" method="post">
           <h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
 			   </form>
-    	<h4><a href="{{ url_for('innovator', title=r.innovname) }}" style="color:white; padding:0">{{r.innovname}}</a><h4>
+    	<h4><a href="{{ url_for('innovator', title=r.innovname) }}" >{{r.innovname}}</a><h4>
       <h4>{{r.editorname}}</h4>
 			<h4>{{r.overview}}</h4> 
       </div>
