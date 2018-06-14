@@ -66,14 +66,14 @@ def innovators():
     return render_template("innovatorList.html", innovatorsAll=innovatorsAll)
 
 @app.route('/magic/<name>')
-def magic(name):
-    if name == None:
+def magic(title):
+    if title == None:
         pass
     #title = request.form['sub']
     #print("The name email address is '" + title + "'")
-    info = [innovator for innovator in innovatorsAll if innovator['name'] == name]
+    info = [innovator for innovator in innovatorsAll if innovator['name'] == title]
     print("info", info)
-    return render_template("innovatorSingle.html",title=name, info=info[0])
+    return render_template("innovatorSingle.html",title=title, info=info[0])
 
 @app.route("/innovator", methods=["POST"])
 def innovator():
