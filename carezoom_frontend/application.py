@@ -71,7 +71,7 @@ def innovator():
     print("The name email address is '" + title + "'")
     info = [innovator for innovator in innovatorsAll if innovator['name'] == title]
     print("info", info)
-    return render_template("innnovatorSingle.html",title=title, info=info[0])
+    return render_template("innovatorSingle.html",title=title, info=info[0])
 @app.route("/add")
 def add():
     return render_template("add.html")
