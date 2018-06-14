@@ -130,18 +130,13 @@ h4{
 	<div class="flowers">
   {% for r in entries %}
     {% if not r.title == 'Title' %}
-    <a href="{{ url_for('innovator', title=r.innovname) }}">Click to see magic happen</a>
+
   			<div class="flower" style="padding-bottom:20px" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
 
   				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
 			</form>
-    		<form action="/innovator" method="post">
-
-          <h2><input type="submit" name="sub" value= "{{r.innovname}}" style="color:#f2e2e1; padding: 7px 20px;"></input></h2>
-      </form>
-
-      <h4>{{r.innovname}}</h4>
+    	<a href="{{ url_for('innovator', title=r.innovname) }}">Click to see magic happen</a>
       <h4>{{r.editorname}}</h4>
 			<h4>{{r.overview}}</h4> </div>
 		<br><br><br><br><br><br><br>	
