@@ -65,8 +65,8 @@ def recipes():
 def innovators():
     return render_template("innovatorList.html", innovatorsAll=innovatorsAll)
 
-@app.route('/magic/<title>')
-def magic(title):
+@app.route('/innovator/<title>')
+def innovator(title):
     if title == None:
         pass
     #title = request.form['sub']

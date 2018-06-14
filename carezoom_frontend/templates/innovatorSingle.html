@@ -78,13 +78,10 @@ h4 {
 
 
 <article>
-<h3>title {{title}} </h3><br> <h3>and {{info}}</h3>
 
   {% for r in info %}
-    <h3>{{r.name}}</h3>
-    {% if r.name == title %}
-    <h3>true</h3>
 
+    {% if r.name == title %}
     <h2 style="font-size: 3em; text-align: left">{{r.name}}</h2>
     <br>
     <div class="profile-img"><img src="{{r.imageurl}}"/></div>
