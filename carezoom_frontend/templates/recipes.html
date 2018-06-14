@@ -130,6 +130,7 @@ h4{
 	<div class="flowers">
   {% for r in entries %}
     {% if not r.title == 'Title' %}
+    <a href="{{ url_for('magic', title=r.innovname) }}">Click to see magic happen</a>
   			<div class="flower" style="padding-bottom:20px" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
 
