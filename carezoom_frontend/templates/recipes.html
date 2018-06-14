@@ -123,31 +123,6 @@ h4{
   width: 950px;
 }
 
-input[type=submit] {
-    width: 80%;
-    background-color: #f2e2e1;
-    color: black;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center
-}
-input[type=submitsmall] {
-    width: 100%;
-    background-color: #f2e2e1;
-    color: black;
-    padding: 7px 10px;
-    margin: 4px 0;
-    border: none;
-    border-radius: 2px;
-    cursor: pointer;
-    text-align: center
-}
-input[type=submitsmall]:hover {
-    background-color: #f2e2e1;
-}
 
 </style>
 
@@ -158,11 +133,11 @@ input[type=submitsmall]:hover {
   			<div class="flower" style="padding-bottom:20px" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
 
-  				<h2><input type="submitsmall" name="sub" value= "{{r.title}}" ></input></h2>
+  				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
 			</form>
     		<form action="/innovator" method="post">
 
-          <h2><input type="submitsmall" name="sub" value= "{{r.innovname}}" ></input></h2>
+          <h2><input type="submit" name="sub" value= "{{r.innovname}}" style="color:#f2e2e1; padding: 7px 20px;"></input></h2>
       </form>
 
       <h4>{{r.innovname}}</h4>
