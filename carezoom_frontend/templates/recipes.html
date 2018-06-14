@@ -131,15 +131,15 @@ h4{
   {% for r in entries %}
     {% if not r.title == 'Title' %}
 
-  			<div class="flower" style="padding-bottom:20px" data_id="{{r.title}}" data-category="{{r.filter}}">
+  		<div class="flower" style="width:950px; text-align: center"" data_id="{{r.title}}" data-category="{{r.filter}}">
     		<form action="/intervention" method="post">
-
-  				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
-			</form>
-    	<a href="{{ url_for('innovator', title=r.innovname) }}">Click to see magic happen</a>
+          <h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
+			   </form>
+    	<h4><a href="{{ url_for('innovator', title=r.innovname) }}">{{r.innovname}}</a><h4>
       <h4>{{r.editorname}}</h4>
-			<h4>{{r.overview}}</h4> </div>
-		<br><br><br><br><br><br><br>	
+			<h4>{{r.overview}}</h4> 
+      </div>
+
     {% endif %}
 
   {% endfor %}
