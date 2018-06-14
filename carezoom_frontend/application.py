@@ -75,13 +75,7 @@ def innovator(title):
     print("info", info)
     return render_template("innovatorSingle.html",title=title, info=innovatorsAll)
 
-@app.route("/innovator", methods=["POST"])
-def innovator():
-    title = request.form['sub']
-    print("The name email address is '" + title + "'")
-    info = [innovator for innovator in innovatorsAll if innovator['name'] == title]
-    print("info", info)
-    return render_template("innovatorSingle.html",title=title, info=info[0])
+
 
 @app.route("/add")
 def add():
