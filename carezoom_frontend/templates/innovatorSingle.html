@@ -78,19 +78,25 @@ h4 {
 
 
 <article>
-<h4>title {{title}}</h4>
+<h4>title {{title}} and {{info}}</h4>
 
-<h2 style="font-size: 3em; text-align: left">{{info.name}}</h2>
-<br>
-<div class="profile-img"><img src="{{info.imageurl}}"/></div>
-<h4>Title: {{info.title}}</h4><br>
-<h4>Institution: {{info.institution}}</h4><br>
+  {% for r in info %}
+    {% if r.name == title %}
+
+    <h2 style="font-size: 3em; text-align: left">{{r.name}}</h2>
+    <br>
+    <div class="profile-img"><img src="{{r.imageurl}}"/></div>
+    <h4>Title: {{r.title}}</h4><br>
+    <h4>Institution: {{r.institution}}</h4><br>
 
 
 <blockquote>
-<p>{{info.bio}}</p>
+<p>{{r.bio}}</p>
 </blockquote>
 
+    {% endif %}
+
+  {% endfor %}
 
 <script>
 var acc = document.getElementsByClassName("accordion");
