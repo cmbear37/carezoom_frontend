@@ -40,7 +40,7 @@
   height: 68px;
   line-height: 68px;
   padding: 0 5%;
-  margin: 0 0 1px;
+  margin: 0 auto;
   position: relative;
   color:white;
 }
@@ -136,7 +136,7 @@ h4{
     		<form action="/intervention" method="post">
           <h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
 			   </form>
-    	<h4><a href="{{ url_for('innovator', title=r.innovname) }}">{{r.innovname}}</a><h4>
+    	<h4 style="color:white"><a href="{{ url_for('innovator', title=r.innovname) }}">{{r.innovname}}</a><h4>
       <h4>{{r.editorname}}</h4>
 			<h4>{{r.overview}}</h4> 
       </div>
