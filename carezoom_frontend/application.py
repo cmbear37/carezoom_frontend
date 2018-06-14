@@ -65,7 +65,7 @@ def recipes():
 def innovators():
     return render_template("innovatorList.html", innovatorsAll=innovatorsAll)
 
-@app.route('/magic/<name>')
+@app.route('/magic/<title>')
 def magic(title):
     if title == None:
         pass
