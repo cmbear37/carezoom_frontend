@@ -118,8 +118,12 @@ article > flowers-wraps {
     margin: 20px 0;
 }
 
+h4{
+  font-size=20px;
+  width: 950px;
+}
+
 </style>
-<h2 style="text-align:center">All Recipes</h2>
 
 <div class="container" style="align-items: flex-start; width:100%">
 	<div class="flowers">
@@ -130,13 +134,17 @@ article > flowers-wraps {
 
   				<h2><input type="submit" name="sub" value= "{{r.title}}" ></input></h2>
 			</form>
-    		
-      <h4 font-size=15px>{{r.innovname}}</h4>
-      <h4 font-size=15px>{{r.editorname}}</h4>
-			<h4 font-size=20px>{{r.overview}}</h4> </div>
+    		<form action="/intervention" method="post">
+
+          <h2><input type="submit" name="sub" value= "{{r.innovname}}" ></input></h2>
+      </form>
+      
+      <h4>{{r.innovname}}</h4>
+      <h4>{{r.editorname}}</h4>
+			<h4>{{r.overview}}</h4> </div>
 		<br><br><br><br><br><br><br>	
     {% endif %}
-    
+
   {% endfor %}
 </div>
 </div>

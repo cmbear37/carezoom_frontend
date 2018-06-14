@@ -1,0 +1,115 @@
+{% extends "index.html" %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block main %}
+<style>
+h2 {
+    display: inline;
+    font-size: 2em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    width:80%;
+    font-weight: bold;
+    text-align: left;
+    line-height: 67px;
+    padding-left: 10px;
+
+}
+.accordion {
+    background-color: #f2e2e1;
+    color: #000;
+    cursor: pointer;
+    padding: 0px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+
+    transition: 0.4s;
+
+}
+
+.active, .accordion:hover {
+    background-color: #ba4444;
+    color:white;
+}
+
+.accordion:after {
+    content: '\002B';
+    color: black;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    padding: 20px 0;
+    padding-right: 10px;
+}
+
+.active:after {
+    content: "\2212";
+    color:white;
+    padding-right: 10px;
+
+}
+
+.panel {
+    padding: 0 0px;
+    background-color: #ba4444;
+    max-height: 0;
+    color: white;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+h4 {
+	font-style: italic;
+}
+
+
+
+
+</style>
+
+
+<article>
+
+
+<h2 style="font-size: 3em; text-align: left">{{info.name}}</h2>
+<br>
+
+<h4>Title: {{info.title}}</h4><br>
+<h4>Institution: {{info.institution}}</h4><br>
+
+
+<blockquote>
+<p>{{info.bio}}</p>
+</blockquote>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+
+
+
+{% endblock %}
