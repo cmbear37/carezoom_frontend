@@ -26,6 +26,9 @@ teamMembers = df3.to_dict(orient='records')
 df4 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/entries3.xlsx')
 entries3= df4.to_dict(orient='records')
 
+df5 = pd.read_excel('/home/carezoom/carezoom/carezoom_frontend/carezoom_frontend/advisors.xlsx')
+advisors= df5.to_dict(orient='records')
+
 
 if app.config["DEBUG"]:
     @app.after_request
@@ -92,7 +95,7 @@ def team():
 
 @app.route("/advisors")
 def advisors():
-    return render_template("meetTheTeam.html", teamMembers=teamMembers)
+    return render_template("meetTheTeam.html", teamMembers=advisors)
 
 @app.route("/talk")
 def talk():
