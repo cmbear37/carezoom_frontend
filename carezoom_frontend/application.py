@@ -90,6 +90,10 @@ def profile():
 def team():
     return render_template("meetTheTeam.html", teamMembers=teamMembers)
 
+@app.route("/advisors")
+def advisors():
+    return render_template("meetTheTeam.html", teamMembers=teamMembers)
+
 @app.route("/talk")
 def talk():
     return render_template("home.html")
