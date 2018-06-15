@@ -48,13 +48,14 @@ input[type=submit]:hover {
       {% for i in innovatorsAll %}
             <div class="list-group-item clearfix" style="background-color: #ba4444">
                 <div class="profile-teaser-left">
+                    <a href="{{ url_for('innovator', title=i.innovname) }}" >
                     <div class="profile-img"><img src="{{i.imageurl}}"/></div>
+                    </a>
                 </div>
                 <div class="profile-teaser-main">
-                    <h2 class="profile-name">
-                    <a href="google.com" >{{i.innovname}}</a>
-                </h2>
+                    
                     <div class="profile-info" style="width: 95%">
+                        <div class="info"><span class="">Title:</span> {{i.title}}</div> <br>
                         <div class="info"><span class="">Institution:</span> {{i.institution}}</div> <br>
                         <div class="info" style="text-align: justify;"><span class="">Bio:</span> {{i.bio}}</div>
                     </div>
