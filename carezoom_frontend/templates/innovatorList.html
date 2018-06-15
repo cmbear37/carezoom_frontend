@@ -51,10 +51,10 @@ input[type=submit]:hover {
                     <div class="profile-img"><img src="{{i.imageurl}}"/></div>
                 </div>
                 <div class="profile-teaser-main">
-                    
+                    <h2 class="profile-name">
+                    <a href="{{ url_for('innovator', title=i.innovname) }}" >{{i.innovname}}</a>
+                </h2>
                     <div class="profile-info" style="width: 95%">
-                        <div class="info"><span class="">name:</span> {{i.innovname}}</div> <br>
-                        <a href="{{ url_for('innovator', title=i.innovname) }}" class="info" title="carezoom">{{i.innovname}}</a> <br>
                         <div class="info"><span class="">Institution:</span> {{i.institution}}</div> <br>
                         <div class="info" style="text-align: justify;"><span class="">Bio:</span> {{i.bio}}</div>
                     </div>
