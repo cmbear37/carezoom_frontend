@@ -76,7 +76,7 @@ def innovator(title):
     #print("The name email address is '" + title + "'")
     info = [innovator for innovator in innovatorsAll if innovator['name'] == title]
     print("info", info)
-    return render_template("innovatorSingle.html",title=title, info=innovatorsAll)
+    return render_template("innovatorSingle.html",title=title, info=info)
 
 
 
