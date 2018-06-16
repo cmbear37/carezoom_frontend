@@ -95,7 +95,7 @@ def team():
 
 @app.route("/advisors")
 def advisors():
-    return render_template("innovatorList.html", innovatorsAll=advisorsAll)
+    return render_template("advisors.html", advisorsAll=advisorsAll)
 
 @app.route("/talk")
 def talk():
