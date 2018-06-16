@@ -50,5 +50,21 @@
 
 </div>
 
+<script>
+var $form = $('form#test-form'),
+    url = 'https://script.google.com/a/college.harvard.edu/macros/s/AKfycbzmqIo3kw0yL4yB-jWV6zpR_URe7nZmsPFbdqfFRC1CErvKQCI/exec'
+
+$('#submit-form').on('click', function(e) {
+  e.preventDefault();
+  var jqxhr = $.ajax({
+    url: url,
+    method: "GET",
+    dataType: "json",
+    data: $form.serializeObject()
+  }).success(
+    // do something
+  );
+})</script>
+
 {% endblock %}
 
