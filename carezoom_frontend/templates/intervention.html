@@ -99,6 +99,11 @@ h4 {
 <button class="accordion"><h2> Background</h2></button>
 <div class="panel">
 	<h4>Tags</h4>
+  {% set list1 = info.orgtypetag.split('§') %}
+  <ul>
+  {% for t in list1 %}
+  <li>t</li>
+{% endfor %}
 	<p>{{info.orgtypetag}}</p>
 	<h4>Text</h4>
   <p>{{info.orgtypetext}}</p>
