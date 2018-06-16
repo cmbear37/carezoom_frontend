@@ -48,7 +48,7 @@ input[type=submit]:hover {
       {% for i in innovatorsAll %}
             <div class="list-group-item clearfix" style="background-color: #ba4444">
                 <div class="profile-teaser-left">
-                    <a href="{{ url_for('innovator', title=r.innovname) }}" >
+                    <a href="{{ url_for('innovator', title=i.innovname) }}" >
                     <div class="profile-img"><img src="{{i.imageurl}}"/></div>
                     </a>
                 </div>
